@@ -2,7 +2,7 @@ import mongoose  from "mongoose";
 
 export async function connect(){
     try {
-        mongoose.connect(process.env.MONGO_URI!) //typescript error solution->!
+      await  mongoose.connect(`${process.env.MONGO_URI}/saurabhgarkoti22`!) //typescript error solution->!
         const connection = mongoose.connection
 
         connection.on('connected', ()=>{
