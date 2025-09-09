@@ -48,12 +48,13 @@ function SignupPage() {
   return (
     <div className='flex flex-col items-center
     justify-center min-h-screen py-2'>
-      <h1>{loading ? "processing" : "Signup"}</h1>
+      <div className='flex flex-col items-center justify-center bg-neutral-900 p-9 px-15 border rounded-lg'>
+         <h1 className='text-2xl mb-3'>{loading ? "processing" : "Create account"}</h1>
       <hr />
       <label htmlFor="username">username</label>
       <input
       className='p-2 border border-gray-300 rounded-lg
-      mb-4 focus:outline-none focus:border-gray-600 text-black bg-white'
+      mb-4 focus:outline-none focus:border-gray-600 bg-black'
       id='username'
       value={user.username}
       onChange={(e)=> setUser({...user, username:
@@ -65,7 +66,7 @@ function SignupPage() {
       <label htmlFor="email">email</label>
       <input
       className='p-2 border border-gray-300 rounded-lg
-      mb-4 focus:outline-none focus:border-gray-600 text-black bg-white'
+      mb-4 focus:outline-none focus:border-gray-600 bg-black '
       id='email'
       value={user.email}
       onChange={(e)=> setUser({...user, email:
@@ -77,7 +78,7 @@ function SignupPage() {
       <label htmlFor="password">password</label>
       <input
       className='p-2 border border-gray-300 rounded-lg
-      mb-4 focus:outline-none focus:border-gray-600 text-black bg-white'
+      mb-4 focus:outline-none focus:border-gray-600  bg-black'
       id='password'
       value={user.password}
       onChange={(e)=> setUser({...user, password:
@@ -92,6 +93,8 @@ function SignupPage() {
         {buttonDisabled? "No signUp" : "SignUp"}
        </button>
        <Link href={"/login"}>Visit login page</Link>
+      </div>
+     
     </div>
   )
 }
